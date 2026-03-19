@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum-Card - Jeu éducatif</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Bouton pour ouvrir/fermer la barre latérale -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- Barre latérale cachée -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>📋 Catégories</h3>
+        <button class="close-btn" onclick="toggleSidebar()">✕</button>
+      </div>
+
+      <!-- Liste des catégories -->
+      <div class="categories-list">
+        <button
+          class="categorie-item active"
+          onclick="changerCategorie('animaux')"
+        >
+          <span>🐾</span> Animaux
+        </button>
+        <button class="categorie-item" onclick="changerCategorie('fleurs')">
+          <span>🌸</span> Fleurs
+        </button>
+        <button class="categorie-item" onclick="changerCategorie('legumes')">
+          <span>🥕</span> Légumes
+        </button>
+        <button class="categorie-item" onclick="changerCategorie('fruits')">
+          <span>🍎</span> Fruits
+        </button>
+        <button class="categorie-item" onclick="changerCategorie('vetements')">
+          <span>👕</span> Vêtements
+        </button>
+        <button
+          class="categorie-item"
+          onclick="changerCategorie('fournitures')"
+        >
+          <span>📚</span> Fournitures
+        </button>
+        <button class="categorie-item" onclick="changerCategorie('travail')">
+          <span>💼</span> Travail
+        </button>
+        <button class="categorie-item" onclick="changerCategorie('transport')">
+          <span>🚗</span> Transport
+        </button>
+        <button class="categorie-item" onclick="changerCategorie('sport')">
+          <span>⚽</span> Sport
+        </button>
+        <button class="categorie-item" onclick="changerCategorie('couleurs')">
+          <span>🎨</span> Couleurs
+        </button>
+        <button class="categorie-item" onclick="changerCategorie('nombres')">
+          <span>🔢</span> Nombres
+        </button>
+        <button
+          class="categorie-item"
+          onclick="changerCategorie('alimentations')"
+        >
+          <span>🍔</span> Alimentations
+        </button>
+        <button
+          class="categorie-item"
+          onclick="changerCategorie('technologie')"
+        >
+          <span>💻</span> Technologie
+        </button>
+      </div>
+
+      <!-- Section des couleurs en bas -->
+      <div class="color-section">
+        <h4>🎨 Choisis ta couleur</h4>
+        <div class="color-picker">
+          <button
+            class="color-btn"
+            style="background: #ffd1dc"
+            onclick="changerCouleur('#FFD1DC', '#B5EAD7')"
+          ></button>
+          <button
+            class="color-btn"
+            style="background: #c5e0b4"
+            onclick="changerCouleur('#C5E0B4', '#A7C7E7')"
+          ></button>
+          <button
+            class="color-btn"
+            style="background: #ffe5b4"
+            onclick="changerCouleur('#FFE5B4', '#FFB7B2')"
+          ></button>
+          <button
+            class="color-btn"
+            style="background: #b4e0ff"
+            onclick="changerCouleur('#B4E0FF', '#D4A5F0')"
+          ></button>
+          <button
+            class="color-btn"
+            style="background: #ffb7b2"
+            onclick="changerCouleur('#FFB7B2', '#B5EAD7')"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="main-content">
+      <h1 class="animated-title">
+        <span>✨</span>
+        <span class="title-word">S</span>
+        <span class="title-word">U</span>
+        <span class="title-word">M</span>
+        <span class="title-word">-</span>
+        <span class="title-word">C</span>
+        <span class="title-word">A</span>
+        <span class="title-word">R</span>
+        <span class="title-word">D</span>
+        <span>✨</span>
+      </h1>
+
+      <p class="sous-titre">"🧩 1, 2, 3... Souviens-toi !"</p>
+
+      <div class="score-board">
+        <div class="score-item">
+          <span class="score-label">Paires trouvées :</span>
+          <span class="score-value" id="paires">0</span>
+        </div>
+        <div class="score-item">
+          <span class="score-label">Tentatives :</span>
+          <span class="score-value" id="tentatives">0</span>
+        </div>
+        <div class="score-item">
+          <span class="score-label">Catégorie :</span>
+          <span class="score-value" id="categorie-active">Animaux</span>
+        </div>
+      </div>
+
+      <div class="game-board" id="game-board">
+        <!-- Les cartes seront générées ici -->
+      </div>
+
+      <div class="game-controls">
+        <button class="btn" onclick="resetGame()">
+          <span>🔄</span> Nouvelle partie
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
