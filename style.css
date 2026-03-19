@@ -344,3 +344,191 @@ body {
     font-size: 2em;
   }
 }
+/* Popup de victoire */
+.popup-victoire {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-victoire.show {
+  display: flex;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 50px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  border: 8px solid #ffb7b2;
+  box-shadow: 0 15px 0 #ff9aa2;
+  animation: popIn 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content::before {
+  content: "🎉";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  font-size: 80px;
+  opacity: 0.2;
+  transform: rotate(-15deg);
+}
+
+.popup-content::after {
+  content: "🎊";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  font-size: 80px;
+  opacity: 0.2;
+  transform: rotate(15deg);
+}
+
+.popup-header {
+  margin-bottom: 20px;
+}
+
+.popup-emoji {
+  font-size: 70px;
+  display: inline-block;
+  animation: bounce 2s ease infinite;
+}
+
+.popup-title {
+  font-size: 4em;
+  color: #ff6b6b;
+  text-shadow: 3px 3px 0 #ffd93d;
+  margin: 10px 0;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.popup-body {
+  margin: 20px 0;
+}
+
+.popup-message {
+  font-size: 1.8em;
+  color: #6b4e71;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.popup-stats {
+  font-size: 1.4em;
+  background: #ffe5e5;
+  padding: 15px;
+  border-radius: 40px;
+  display: inline-block;
+  color: #ff6b6b;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.popup-celebration {
+  font-size: 3em;
+  margin: 20px 0;
+  animation: clap 0.5s ease infinite;
+}
+
+.popup-footer {
+  margin-top: 20px;
+}
+
+.popup-btn {
+  background: linear-gradient(135deg, #ffd93d, #f6ae2d);
+  color: #6b4e71;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 40px;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 8px 0 #f6ae2d;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.popup-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 13px 0 #f6ae2d;
+}
+
+.popup-btn span {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes clap {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Confettis (optionnel) */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffd93d;
+  border-radius: 50%;
+  animation: confettiFall 3s linear infinite;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(500px) rotate(360deg);
+  }
+}

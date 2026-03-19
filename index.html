@@ -34,8 +34,11 @@
         <button class="categorie-item" onclick="changerCategorie('fruits')">
           <span>🍎</span> Fruits
         </button>
+        <button class="categorie-item" onclick="changerCategorie('metiers')">
+          <span>👩‍🔧</span> Métiers
+        </button>
         <button class="categorie-item" onclick="changerCategorie('vetements')">
-          <span>👕</span> Vêtements
+          <span>👗</span> Vêtements
         </button>
         <button
           class="categorie-item"
@@ -43,8 +46,8 @@
         >
           <span>📚</span> Fournitures
         </button>
-        <button class="categorie-item" onclick="changerCategorie('travail')">
-          <span>💼</span> Travail
+        <button class="categorie-item" onclick="changerCategorie('imoujis')">
+          <span>🤓</span> Imoujis
         </button>
         <button class="categorie-item" onclick="changerCategorie('transport')">
           <span>🚗</span> Transport
@@ -73,35 +76,51 @@
       </div>
 
       <!-- Section des couleurs en bas -->
-      <div class="color-section">
-        <h4>🎨 Choisis ta couleur</h4>
-        <div class="color-picker">
-          <button
-            class="color-btn"
-            style="background: #ffd1dc"
-            onclick="changerCouleur('#FFD1DC', '#B5EAD7')"
-          ></button>
-          <button
-            class="color-btn"
-            style="background: #c5e0b4"
-            onclick="changerCouleur('#C5E0B4', '#A7C7E7')"
-          ></button>
-          <button
-            class="color-btn"
-            style="background: #ffe5b4"
-            onclick="changerCouleur('#FFE5B4', '#FFB7B2')"
-          ></button>
-          <button
-            class="color-btn"
-            style="background: #b4e0ff"
-            onclick="changerCouleur('#B4E0FF', '#D4A5F0')"
-          ></button>
-          <button
-            class="color-btn"
-            style="background: #ffb7b2"
-            onclick="changerCouleur('#FFB7B2', '#B5EAD7')"
-          ></button>
-        </div>
+      <!-- Section des couleurs en bas -->
+<div class="color-section">
+  <h4>🎨 Choisis ta couleur</h4>
+  <div class="color-picker">
+    <!-- Bouton rose/vert -->
+    <button
+      class="color-btn"
+      style="background: #FFD1DC"
+      onclick="changerCouleur('#FFD1DC', '#B5EAD7')"
+      title="Rose et Vert"
+    ></button>
+    
+    <!-- Bouton vert/bleu -->
+    <button
+      class="color-btn"
+      style="background: #C5E0B4"
+      onclick="changerCouleur('#C5E0B4', '#A7C7E7')"
+      title="Vert et Bleu"
+    ></button>
+    
+    <!-- Bouton jaune/corail -->
+    <button
+      class="color-btn"
+      style="background: #FFE5B4"
+      onclick="changerCouleur('#FFE5B4', '#FFB7B2')"
+      title="Jaune et Corail"
+    ></button>
+    
+    <!-- Bouton bleu/violet -->
+    <button
+      class="color-btn"
+      style="background: #B4E0FF"
+      onclick="changerCouleur('#B4E0FF', '#D4A5F0')"
+      title="Bleu et Violet"
+    ></button>
+    
+    <!-- Bouton corail/vert -->
+    <button
+      class="color-btn"
+      style="background: #FFB7B2"
+      onclick="changerCouleur('#FFB7B2', '#B5EAD7')"
+      title="Corail et Vert"
+    ></button>
+  </div>
+</div>
       </div>
     </div>
 
@@ -149,5 +168,26 @@
     </div>
 
     <script src="script.js"></script>
+    <!-- Popup de victoire (caché par défaut) -->
+<div class="popup-victoire" id="popupVictoire">
+  <div class="popup-content">
+    <div class="popup-header">
+      <span class="popup-emoji">🏆✨🎉</span>
+    </div>
+    <div class="popup-body">
+      <h2 class="popup-title">BRAVO !</h2>
+      <p class="popup-message" id="popupMessage"></p>
+      <p class="popup-stats" id="popupStats"></p>
+      <div class="popup-celebration">
+        <span>👏🎊👏</span>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <button class="popup-btn" onclick="fermerPopup()">
+        <span>🎯</span> Continuer
+      </button>
+    </div>
+  </div>
+</div>
   </body>
 </html>
